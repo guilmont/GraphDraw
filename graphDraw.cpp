@@ -5,22 +5,19 @@
 
 #include "graphDraw.hpp"
 
-
-
-std::ostream& operator<<(std::ostream& out, const glm::vec2& var) {
+static std::ostream& operator<<(std::ostream& out, const glm::vec2& var) {
     out << var.x << ", " << var.y;
     return out;
 }
 
-std::ostream& operator<<(std::ostream& out, const glm::vec3& var) {
+static std::ostream& operator<<(std::ostream& out, const glm::vec3& var) {
     out << var.x << ", " << var.y << ", " << var.z;
     return out;
 }
 
-
 GraphDraw::GraphDraw() : Application("Graph drawing", 1200, 800, "assets/layout.ini") {
     m_View = GRender::Viewport({ 1200, 800 });
-    m_Camera = GRender::Camera({ 0.0f, 0.0f, 25.0f });
+    m_Camera = GRender::Camera({ 0.0f, 0.0f, 75.0f });
     m_Camera.sensitivity() = 20.0f;
     m_Camera.open();
 
